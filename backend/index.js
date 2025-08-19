@@ -1,10 +1,9 @@
 import express from 'express'
+import userRoute from './Routes/userRoute'
 const app = express();
 const port = 3000;
 
-app.get('./', (req, res) => {
-    res.send('hello from m=node js backend');
-})
+app.use('/api', userRoute)
 
 app.listen(port, () => {
     console.log(`server running on http://localhost:${port}`);
